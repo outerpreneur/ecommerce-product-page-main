@@ -12,12 +12,18 @@
       href="./images/favicon-32x32.png"
     />
     <link href="./output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <title>Frontend Mentor | E-commerce product page</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <body>
+  <body class="font-fontKumbh">
     <header class="flex justify-between p-4 items-center">
       <div class="flex items-center gap-2">
         <svg width="16" height="15" xmlns="http://www.w3.org/2000/svg">
@@ -53,26 +59,70 @@
         <img class="w-5" src="./images/image-avatar.png" alt="" />
       </div>
     </header>
+    <main>
+      <section id="image-slider">
+        <img src="./images/image-product-1.jpg" />
+      </section>
+      <section class="p-5 flex flex-col gap-3">
+        <h1 class="uppercase font-semibold text-accentOrange">
+          Sneaker Company
+        </h1>
 
-    <h1>Sneaker Company</h1>
+        <h2 class="text-2xl font-semibold">Fall Limited Edition Sneakers</h2>
 
-    <h2>Fall Limited Edition Sneakers</h2>
+        <p class="text-grayishBlue">
+          These low-profile sneakers are your perfect casual wear companion.
+          Featuring a durable rubber outer sole, they’ll withstand everything
+          the weather can offer.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="flex items-center gap-3">
+            <span class="text-2xl font-semibold">$125.00</span>
+            <span
+              class="bg-paleOrange py-1 px-2 font-semibold text-accentOrange rounded-lg"
+              >50%</span
+            >
+          </div>
+          <span class="text-darkGrayishBlue line-through">$250.00</span>
+        </div>
 
-    <p>
-      These low-profile sneakers are your perfect casual wear companion.
-      Featuring a durable rubber outer sole, they’ll withstand everything the
-      weather can offer.
-    </p>
-
-    <span>$125.00</span>
-    <span>50%</span>
-    <span>$250.00</span>
-
-    <div>
-      <button>-</button>
-      <span>0</span>
-      <button>+</button>
-      <button>Add to cart</button>
-    </div>
+        <form class="flex flex-col gap-3">
+          <div class="bg-lightGrayishBlue flex justify-between px-4 py-2">
+            <button class="text-accentOrange font-semibold text-2xl">-</button>
+            <span class="font-semibold">0</span>
+            <button class="text-accentOrange font-semibold text-2xl">+</button>
+          </div>
+          <button
+            class="bg-accentOrange hover:bg-paleOrange hover:text-accentOrange w-full px-4 py-2 text-specialWhite shadow-2xl flex justify-center gap-2"
+          >
+            <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
+                fill="#fff"
+                fill-rule="nonzero"
+              />
+            </svg>
+            Add to cart
+          </button>
+        </form>
+      </section>
+    </main>
   </body>
 </html>
+
+<style>
+  @keyframes progress {
+    0% {
+      width: 0;
+      background-color: red;
+    }
+    50% {
+      width: 50%;
+      background-color: blue;
+    }
+    100% {
+      width: 100%;
+      background-color: green;
+    }
+  }
+</style>
