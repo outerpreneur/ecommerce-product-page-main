@@ -24,7 +24,7 @@
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body class="font-fontKumbh max-w-6xl mx-auto h-screen">
-    <header class="flex justify-between p-4 items-center border-b-2 md:h-1/6">
+    <header class="flex justify-between p-4 items-center border-b-2 md:h-[10%]">
       <div class="flex items-center gap-2 md:flex-row-reverse md:gap-12">
         <svg
           class="md:hidden"
@@ -66,45 +66,76 @@
         <img class="w-5 md:w-10" src="./images/image-avatar.png" alt="" />
       </div>
     </header>
-    <main class="md:flex md:items-center md:h-5/6">
-      <section class="grid grid-cols-1 md:grid-cols-2">
-        <div id="image-slider" class="relative">
-          <img src="./images/image-product-1.jpg" class="rounded-3xl" />
-          <div
-            class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center left-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-          >
-            <svg
-              class=""
-              width="12"
-              height="18"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 1 3 9l8 8"
-                stroke="#1D2026"
-                stroke-width="3"
-                fill="none"
-                fill-rule="evenodd"
-              />
-            </svg>
+    <main class="md:flex md:items-center md:h-[90%]">
+      <section
+        id="product section"
+        class="grid grid-cols-1 md:grid-cols-2 gap-14 w-full"
+      >
+        <div id="image-slider" class="md:p-10">
+          <div id="main-image" class="relative">
+            <img src="./images/image-product-1.jpg" class="md:rounded-3xl" />
+            <div id="image-selectors" class="md:hidden">
+              <div
+                id="previous"
+                class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center left-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+              >
+                <svg
+                  class=""
+                  width="12"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+              <div
+                id="forward"
+                class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
+              >
+                <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke="#1D2026"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
+              </div>
+            </div>
           </div>
-          <div
-            class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center right-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
-          >
-            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="m2 1 8 8-8 8"
-                stroke="#1D2026"
-                stroke-width="3"
-                fill="none"
-                fill-rule="evenodd"
-              />
-            </svg>
+          <div class="image-slideshow hidden md:flex md:justify-between mt-10">
+            <img
+              class="w-24 rounded-2xl"
+              src="./images/image-product-1-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="w-24 rounded-2xl"
+              src="./images/image-product-2-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="w-24 rounded-2xl"
+              src="./images/image-product-3-thumbnail.jpg"
+              alt=""
+            />
+            <img
+              class="w-24 rounded-2xl"
+              src="./images/image-product-4-thumbnail.jpg"
+              alt=""
+            />
           </div>
         </div>
-        <div class="md:flex md:justify-center">
+        <div id="product-info" class="md:flex md:justify-center p-6">
           <div
-            class="p-5 flex flex-col gap-3 md:flex md:flex-col md:justify-center max-w-md"
+            class="flex flex-col gap-3 md:flex md:flex-col md:justify-center md:max-w-md"
           >
             <h1 class="text-sm uppercase font-semibold text-accentOrange">
               Sneaker Company
@@ -133,7 +164,9 @@
             </div>
 
             <form class="flex flex-col gap-3 md:flex-row">
-              <div class="bg-lightGrayishBlue flex justify-between px-4 py-2">
+              <div
+                class="bg-lightGrayishBlue flex justify-between px-4 py-2 items-center shadow-2xl rounded-xl md:w-2/6"
+              >
                 <button class="text-accentOrange font-semibold text-2xl">
                   -
                 </button>
@@ -143,7 +176,7 @@
                 </button>
               </div>
               <button
-                class="bg-accentOrange hover:bg-opacity-75 w-full px-4 py-2 text-specialWhite shadow-2xl flex justify-center gap-2"
+                class="bg-accentOrange hover:bg-opacity-75 w-full px-4 py-2 text-specialWhite rounded-xl shadow-2xl flex justify-center gap-2 md:w-4/6"
               >
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                   <path
