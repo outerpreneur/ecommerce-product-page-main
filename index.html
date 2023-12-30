@@ -20,13 +20,12 @@
     />
 
     <title>Frontend Mentor | E-commerce product page</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
   <body class="font-fontKumbh max-w-6xl mx-auto h-screen">
     <header class="flex justify-between p-6 md:p-0 items-center border-b-2">
       <div class="flex items-center gap-2 md:flex-row-reverse md:gap-12">
         <svg
+          id="menu-icon"
           class="md:hidden"
           width="16"
           height="15"
@@ -92,7 +91,31 @@
       >
         <div id="image-slider" class="md:p-10">
           <div id="main-image" class="relative">
-            <img src="./images/image-product-1.jpg" class="md:rounded-3xl" />
+            <img
+              id="picture-1"
+              src="./images/image-product-1.jpg"
+              class="md:rounded-3xl"
+            />
+            <img
+              id="picture-2"
+              src="./images/image-product-2.jpg"
+              class="hidden"
+            />
+            <img
+              id="picture-3"
+              src="./images/image-product-3.jpg"
+              class="hidden"
+            />
+            <img
+              id="picture-4"
+              src="./images/image-product-4.jpg"
+              class="hidden"
+            />
+            <img
+              id="picture-5"
+              src="./images/image-product-5.jpg"
+              class="hidden"
+            />
             <div id="image-selectors" class="md:hidden">
               <div
                 id="previous"
@@ -129,7 +152,9 @@
               </div>
             </div>
           </div>
-          <div class="image-slideshow hidden md:flex md:justify-between mt-10">
+          <div
+            class="image-grid-slideshow hidden md:flex md:justify-between mt-10"
+          >
             <img
               class="w-24 rounded-2xl cursor-pointer border-2"
               src="./images/image-product-1-thumbnail.jpg"
@@ -210,16 +235,33 @@
           </div>
         </div>
       </section>
-      <nav
+      <div
         id="mobile-menu"
-        class="fixed bg-white w-[70%] h-screen top-0 left-0 p-6 list-none md:hidden"
+        class="fixed bg-white w-[70%] h-full top-0 left-0 md:hidden -translate-x-full transition-transform duration-500"
       >
-        <li class="cursor-pointer">Collections</li>
-        <li class="cursor-pointer">Men</li>
-        <li class="cursor-pointer">Women</li>
-        <li class="cursor-pointer">About</li>
-        <li class="cursor-pointer">Contact</li>
-      </nav>
+        <svg
+          id="mobile-menu-close"
+          width="14"
+          height="15"
+          xmlns="http://www.w3.org/2000/svg"
+          class="absolute top-6 left-6"
+        >
+          <path
+            d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
+            fill="#69707D"
+            fill-rule="evenodd"
+          />
+        </svg>
+        <div class="p-6 py-20">
+          <ul class="flex flex-col gap-3 font-bold list-none">
+            <li class="cursor-pointer">Collections</li>
+            <li class="cursor-pointer">Men</li>
+            <li class="cursor-pointer">Women</li>
+            <li class="cursor-pointer">About</li>
+            <li class="cursor-pointer">Contact</li>
+          </ul>
+        </div>
+      </div>
     </main>
   </body>
   <script src="app.js"></script>
