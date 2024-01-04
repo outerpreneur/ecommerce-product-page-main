@@ -15,7 +15,7 @@ menuIconClose.addEventListener("click", (event) => {
 // IMAGE SLIDER
 
 let currentImage = 1;
-const totalImages = 5;
+const totalImages = 4;
 
 // functions
 
@@ -35,6 +35,7 @@ function updateImage() {
 
 function moveToNextImage() {
   currentImage = (currentImage % totalImages) + 1;
+
   updateImage();
 }
 
@@ -50,5 +51,13 @@ document
   .addEventListener("click", moveToPreviousImage);
 
 document.getElementById("forward").addEventListener("click", moveToNextImage);
+
+document.addEventListener("keyup", (arrowRight) => {
+  moveToNextImage(arrowRight);
+});
+
+document.addEventListener("keyup", (arrowLeft) => {
+  moveToNextImage(arrowLeft);
+});
 
 updateImage();
