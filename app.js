@@ -65,6 +65,8 @@ document.addEventListener("keyup", (event) => {
 
 // Slider touch
 
+const imageSlider = document.getElementById("image-slider");
+
 let touchStartX = 0;
 let touchEndX = 0;
 
@@ -86,6 +88,6 @@ function handleTouchEnd() {
 }
 
 // Add event listeners for swipe events
-document.addEventListener("touchstart", handleTouchStart, false);
-document.addEventListener("touchmove", handleTouchMove, false);
-document.addEventListener("touchend", handleTouchEnd, false);
+imageSlider.addEventListener("touchstart", handleTouchStart, false);
+imageSlider.addEventListener("touchmove", handleTouchMove, false);
+imageSlider.addEventListener("touchend", handleTouchEnd, false);
