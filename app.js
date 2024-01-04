@@ -14,50 +14,78 @@ menuIconClose.addEventListener("click", (event) => {
 
 // IMAGE SLIDER
 
-let currentImage = 1;
+// Initialize current image index
+let currentImage = 0;
 const totalImages = 4;
 
-// functions
+// Show the initial image
+window.onload = updateImage;
 
+// Function to show the current image
 function showImage(index) {
   // Hide all images
-  for (let i = 1; i <= totalImages; i++) {
+  for (let i = 0; i < totalImages; i++) {
     document.getElementById(`picture-${i}`).classList.add("hidden");
   }
 
-  // Show the selected image
+  // Show the current image
   document.getElementById(`picture-${index}`).classList.remove("hidden");
 }
 
+// Function to update the current image
 function updateImage() {
   showImage(currentImage);
 }
 
+// Function to move to the next image
 function moveToNextImage() {
-  currentImage = (currentImage % totalImages) + 1;
-
+  currentImage = (currentImage + 1) % totalImages;
   updateImage();
 }
 
+// Function to move to the previous image
 function moveToPreviousImage() {
-  currentImage = ((currentImage - 2 + totalImages) % totalImages) + 1;
+  currentImage = (currentImage - 1 + totalImages) % totalImages;
   updateImage();
 }
 
-// event trigers
-
+// Event listeners for previous and next buttons
 document
   .getElementById("previous")
   .addEventListener("click", moveToPreviousImage);
+document.getElementById("next").addEventListener("click", moveToNextImage);
 
-document.getElementById("forward").addEventListener("click", moveToNextImage);
-
-document.addEventListener("keyup", (arrowRight) => {
-  moveToNextImage(arrowRight);
+document.addEventListener("keyup", (event) => {
+  if (event.key === "ArrowLeft") {
+    moveToPreviousImage();
+  } else if (event.key === "ArrowRight") {
+    moveToNextImage();
+  }
 });
 
-document.addEventListener("keyup", (arrowLeft) => {
-  moveToNextImage(arrowLeft);
-});
+// Slider touch
 
-updateImage();
+let touchStartX = 0;
+let touchEndX = 0;
+
+function handleTouchStart(event) {
+  touchStartX = event.touches[0].clientX;
+}
+
+function handleTouchMove(event) {
+  touchEndX = event.touches[0].clientX;
+}
+
+function handleTouchEnd() {
+  if (touchEndX < touchStartX) {
+    moveToNextImage();
+  }
+  if (touchEndX > touchStartX) {
+    moveToPreviousImage();
+  }
+}
+
+// Add event listeners for swipe events
+document.addEventListener("touchstart", handleTouchStart, false);
+document.addEventListener("touchmove", handleTouchMove, false);
+document.addEventListener("touchend", handleTouchEnd, false);
