@@ -91,3 +91,34 @@ function handleTouchEnd() {
 imageSlider.addEventListener("touchstart", handleTouchStart, false);
 imageSlider.addEventListener("touchmove", handleTouchMove, false);
 imageSlider.addEventListener("touchend", handleTouchEnd, false);
+
+// DESKTOP GALLERY LIGHTBOX
+
+const desktopGallery = document.getElementById("desktop-gallery");
+const desktopGalleryImages = document.querySelectorAll("#desktop-gallery img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-img");
+const closeLightbox = document.getElementById("close-lightbox");
+const desktopGalleryLightbox = document.getElementById(
+  "desktop-lightbox-gallery"
+);
+const desktopGalleryImagesLightbox = document.querySelectorAll(
+  "#desktop-lightbox-gallery img"
+);
+
+desktopGalleryImages.forEach((image, index) => {
+  image.addEventListener("click", (event) => {
+    lightboxImage.src = image.src;
+    lightbox.classList.remove("hidden");
+  });
+});
+
+closeLightbox.addEventListener("click", (event) => {
+  lightbox.classList.add("hidden");
+});
+
+desktopGalleryImagesLightbox.forEach((image, index) => {
+  image.addEventListener("click", (event) => {
+    lightboxImage.src = image.src;
+  });
+});
