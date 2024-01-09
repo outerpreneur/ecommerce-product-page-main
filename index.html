@@ -83,17 +83,40 @@
           />
         </svg>
         <img
-          class="w-10 md:w-10 cursor-pointer border-2 rounded-full hover:border-orange-500"
+          class="w-10 cursor-pointer border-2 rounded-full hover:border-orange-500"
           src="./images/image-avatar.png"
           alt=""
         />
       </div>
-      <dialog id="cart-drawer" class="bg-specialWhite w-90% h-12 z-50">
-        <div id="cart-content">
+      <dialog
+        id="cart-drawer"
+        class="bg-white w-[90%] h-12 z-50 rounded-lg max-w-md static md:absolute top-0 right-0 shadow-2x"
+      >
+        <div id="cart-content" class="bg-white p-6 flex flex-col gap-4">
           <div id="top-cart" class="border-b border-gray-400">
-            <h5 class="text-2xl font-semibold">Cart</h5>
+            <h5 class="text-lg font-semibold py-4">Cart</h5>
           </div>
-          <div id="bottom-cart"></div>
+          <div id="bottom-cart" class="flex flex-col gap-3">
+            <div id="cart-grid" class="flex items-center justify-between">
+              <img
+                class="rounded-lg w-10"
+                src="./images/image-product-1-thumbnail.jpg"
+                alt=""
+              />
+              <div class="flex flex-col gap-2">
+                <h6 class="text-sm font-semibold">Fall Limited Edition...</h6>
+                <div class="flex gap-2">
+                  <span class="text-sm font-semibold">$125.00</span>
+                  <span class="text-sm">x 3</span>
+                  <span class="text-sm line-through">$250.00</span>
+                </div>
+              </div>
+              <img src="./images/icon-delete.svg" alt="" />
+            </div>
+            <button class="bg-accentOrange w-full text-white py-2 rounded-xl">
+              Checkout
+            </button>
+          </div>
         </div>
       </dialog>
     </header>
