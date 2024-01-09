@@ -19,7 +19,7 @@ cartIcon.addEventListener("click", showDialog);
 
 // Event listener for clicking outside of the dialog
 window.addEventListener("click", function (event) {
-  if (event.target === dialog) {
+  if (!cartDrawer.contains(event.target) && event.target !== cartIcon) {
     closeDialog();
   }
 });

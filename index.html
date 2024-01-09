@@ -72,6 +72,7 @@
       <div id="cart" class="flex gap-4 items-center md:gap-8 cursor-pointer">
         <svg
           id="cart-icon"
+          class=""
           width="22"
           height="20"
           xmlns="http://www.w3.org/2000/svg"
@@ -90,9 +91,9 @@
       </div>
       <dialog
         id="cart-drawer"
-        class="bg-white w-[90%] h-12 z-50 rounded-lg max-w-md static md:absolute top-0 right-0 shadow-2x"
+        class="bg-white w-[90%] z-50 rounded-lg max-w-md md:absolute top-24 md:top-0 md:right-0 md:transform md:translate-x-full shadow-2xl"
       >
-        <div id="cart-content" class="bg-white p-6 flex flex-col gap-4">
+        <div id="cart-content" class="bg-green p-6 flex flex-col gap-4">
           <div id="top-cart" class="border-b border-gray-400">
             <h5 class="text-lg font-semibold py-4">Cart</h5>
           </div>
@@ -113,7 +114,7 @@
               </div>
               <img src="./images/icon-delete.svg" alt="" />
             </div>
-            <button class="bg-accentOrange w-full text-white py-2 rounded-xl">
+            <button class="bg-accentOrange w-full text-white py-2 rounded-lg">
               Checkout
             </button>
           </div>
@@ -358,7 +359,7 @@
                 </button>
               </div>
               <button
-                class="bg-accentOrange hover:bg-opacity-75 w-full px-4 py-2 text-specialWhite rounded-xl shadow-2xl flex justify-center gap-2 md:w-4/6"
+                class="bg-accentOrange hover:bg-opacity-75 w-full px-4 py-2 text-specialWhite rounded-lg shadow-2xl flex justify-center gap-2 md:w-4/6"
               >
                 <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
                   <path
