@@ -105,6 +105,8 @@ const desktopGalleryLightbox = document.getElementById(
 const desktopGalleryImagesLightbox = document.querySelectorAll(
   "#desktop-lightbox-gallery img"
 );
+const lightboxPrevious = document.getElementById("lightbox-previous");
+const lightboxNext = document.getElementById("lightbox-next");
 
 desktopGalleryImages.forEach((image, index) => {
   image.addEventListener("click", (event) => {
@@ -121,4 +123,32 @@ desktopGalleryImagesLightbox.forEach((image, index) => {
   image.addEventListener("click", (event) => {
     lightboxImage.src = image.src;
   });
+});
+
+let currentImageIndex = 0;
+
+desktopGalleryImages.forEach((image, index) => {
+  image.addEventListener("click", (event) => {
+    lightboxImage.src = image.src;
+    lightbox.classList.remove("hidden");
+    currentImageIndex = index;
+  });
+});
+
+lightboxPrevious.addEventListener("click", (event) => {
+  if (currentImageIndex > 0) {
+    currentImageIndex--;
+  } else {
+    currentImageIndex = desktopGalleryImages.length - 1; // Wrap around to the end
+  }
+  lightboxImage.src = desktopGalleryImages[currentImageIndex].src;
+});
+
+lightboxNext.addEventListener("click", (event) => {
+  if (currentImageIndex < desktopGalleryImages.length - 1) {
+    currentImageIndex++;
+  } else {
+    currentImageIndex = 0; // Wrap around to the beginning
+  }
+  lightboxImage.src = desktopGalleryImages[currentImageIndex].src;
 });

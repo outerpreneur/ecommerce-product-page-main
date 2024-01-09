@@ -166,7 +166,7 @@
           >
             <img
               id="lightbox-0"
-              class="w-24 rounded-2xl cursor-pointer border-2"
+              class="w-24 rounded-2xl cursor-pointer hover:opacity-50"
               src="./images/image-product-1.jpg"
               alt=""
             />
@@ -197,23 +197,64 @@
               class="flex flex-col items-center h-2/3 justify-center relative"
             >
               <div class="flex justify-center">
-                <img
-                  id="lightbox-img"
-                  class="w-6/12 max-w-4/5 max-h-4/5"
-                  src=""
-                  alt=""
-                />
+                <div class="relative">
+                  <img
+                    id="lightbox-img"
+                    class="w-[500px] max-w-4/5 max-h-4/5 rounded-2xl"
+                    src=""
+                    alt=""
+                  />
+                  <div id="lightbox-image-selectors">
+                    <div
+                      id="lightbox-previous"
+                      class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center -left-5 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    >
+                      <svg
+                        class=""
+                        width="12"
+                        height="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M11 1 3 9l8 8"
+                          stroke="#1D2026"
+                          stroke-width="3"
+                          fill="none"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      id="lightbox-next"
+                      class="bg-white w-10 h-10 rounded-full absolute flex items-center justify-center -right-5 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    >
+                      <svg
+                        width="13"
+                        height="18"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="m2 1 8 8-8 8"
+                          stroke="#1D2026"
+                          stroke-width="3"
+                          fill="none"
+                          fill-rule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
                 <svg
                   id="close-lightbox"
-                  class="absolute top-6 right-6 cursor-pointer"
-                  width="14"
+                  class="absolute -top-8 right-0 cursor-pointer text-white hover:text-accentOrange"
+                  width="15"
                   height="15"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
                     d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z"
-                    fill="#fff"
-                    fill-rule="evenodd"
+                    fill="currentColor"
+                    fill-rule="currentColor"
                   />
                 </svg>
               </div>
@@ -223,13 +264,13 @@
               >
                 <img
                   id="lightbox-0"
-                  class="w-24 rounded-2xl cursor-pointer border-2"
+                  class="w-24 rounded-2xl cursor-pointer hover:opacity-50"
                   src="./images/image-product-1.jpg"
                   alt=""
                 />
                 <img
                   id="lightbox-1"
-                  class="w-24 rounded-2xl cursor-pointer hover:opacity-50"
+                  class="w-24 rounded-2xl cursor-pointer hover:opacity-50 hover:border-2 border-accentOrange"
                   src="./images/image-product-2.jpg"
                   alt=""
                 />
