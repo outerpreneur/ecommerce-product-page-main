@@ -54,6 +54,7 @@ cartPlus.addEventListener("click", (event) => {
 // get add to car button
 const addToCart = document.getElementById("add-to-cart");
 const cartSection = document.getElementById("cart");
+const cartBottom = document.getElementById("bottom-cart");
 
 // I want to get the number of the cart counter and add them to addToCartTotal
 
@@ -88,4 +89,36 @@ addToCart.addEventListener("click", (event) => {
 
   // Append the new cart total to the cart icon
   cartSection.appendChild(cartTotal);
+
+  cartBottom.innerHTML = `            <div id="cart-grid" class="flex items-center justify-between">
+  <img
+    class="rounded-lg w-10"
+    src="./images/image-product-1-thumbnail.jpg"
+    alt=""
+  />
+  <div class="flex flex-col gap-2">
+    <h6 class="text-sm font-semibold text-grayishBlue">
+      Fall Limited Edition Sneakers
+    </h6>
+    <div class="flex gap-2">
+      <span class="text-sm font-semibold text-grayishBlue">$125.00</span>
+      <p class="text-sm text-grayishBlue">x<span class="text-grayishBlue">${addToCartTotal}</p>
+      <span id="total-price" class="text-sm font-bold">$${
+        addToCartTotal * 125.0
+      }.00</span>
+    </div>
+  </div>
+  <img src="./images/icon-delete.svg" alt="" />
+</div>
+<button class="bg-accentOrange w-full text-white py-2 rounded-lg outline-none">
+  Checkout
+</button>`;
 });
+
+console.log(addToCartTotal);
+
+if (addToCartTotal === 0) {
+  cartBottom.innerHTML = `<p class="text-center text-gray-500 py-12">Your cart is empty</p>`;
+} else if (addToCartTotal > 0) {
+  cartBottom.innerHTML = `hello`;
+}
