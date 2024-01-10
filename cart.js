@@ -1,5 +1,8 @@
 // Get the cart icon element
 const cartIcon = document.getElementById("cart-icon");
+const addToCart = document.getElementById("add-to-cart");
+const cartSection = document.getElementById("cart");
+const cartBottom = document.getElementById("bottom-cart");
 
 // Get the dialog element
 const cartDrawer = document.getElementById("cart-drawer");
@@ -15,7 +18,7 @@ function closeDialog() {
 }
 
 // Event listener for clicking on the cart icon
-cartIcon.addEventListener("click", showDialog);
+cartSection.addEventListener("click", showDialog);
 
 // Event listener for clicking outside of the dialog
 window.addEventListener("click", function (event) {
@@ -52,9 +55,6 @@ cartPlus.addEventListener("click", (event) => {
 });
 
 // get add to car button
-const addToCart = document.getElementById("add-to-cart");
-const cartSection = document.getElementById("cart");
-const cartBottom = document.getElementById("bottom-cart");
 
 // I want to get the number of the cart counter and add them to addToCartTotal
 
@@ -90,7 +90,7 @@ addToCart.addEventListener("click", (event) => {
   // Append the new cart total to the cart icon
   cartSection.appendChild(cartTotal);
 
-  cartBottom.innerHTML = `            <div id="cart-grid" class="flex items-center justify-between">
+  cartBottom.innerHTML = `<div id="cart-grid" class="flex items-center justify-between">
   <img
     class="rounded-lg w-10"
     src="./images/image-product-1-thumbnail.jpg"
